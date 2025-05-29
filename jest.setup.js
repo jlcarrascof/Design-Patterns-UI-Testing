@@ -7,7 +7,6 @@ let driver;
 
 beforeAll(async () => {
   const options = new chrome.Options()
-  .addArguments('--headless')
   .addArguments('--no-sandbox')
   .addArguments('--disable-dev-shm-usage')
   .addArguments('--disable-gpu');
