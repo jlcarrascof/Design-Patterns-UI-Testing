@@ -1,5 +1,5 @@
-const LoginPage = require('../pages/loginPage.js');
-const SecurePage = require('../pages/securePage.js');
+const LoginPage = require('../pages/loginPage');
+const SecurePage = require('../pages/securePage');
 
 class PageFactory {
   constructor(driver) {
