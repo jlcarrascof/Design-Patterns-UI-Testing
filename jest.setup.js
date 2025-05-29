@@ -1,26 +1,27 @@
 const { Builder } = require('selenium-webdriver');
 const chrome = require('selenium-webdriver/chrome');
-const TIMEOUT = 30000; // Tiempo de espera para las pruebas
+const TIMEOUT = 30000;
 
 // Configuración global del driver
 let driver;
 
 beforeAll(async () => {
-  console.log("Inicializando WebDriver... 🚀");
+  const options = new chrome.Options()
+  .addArguments('--headless')
+  .addArguments('--no-sandbox')
+  .addArguments('--disable-dev-shm-usage')
+  .addArguments('--disable-gpu');
 
   driver = await new Builder()
     .forBrowser('chrome')
-    .setChromeOptions(new chrome.Options()
-    .addArguments('--headless', '--no-sandbox', '--disable-dev-shm-usage') // ✅ Corrección
-)   .build();
+    .setChromeOptions(options)
+    .build();
 
-  console.log("WebDriver inicializado correctamente. 🐾");
-  // Hacer driver disponible globalmente
-  global.driver = driver;
+    global.driver = driver;
 }, TIMEOUT);
 
 afterAll(async () => {
-  if (global.driver) {
-    await global.driver.quit();
+  if (driver) {
+    await driver.quit();
   }
 }, TIMEOUT);
