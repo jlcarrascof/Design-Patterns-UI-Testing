@@ -1,5 +1,5 @@
-const LoginPage = require('../pages/LoginPage.js');
-const SecurePage = require('../pages/SecurePage.js');
+import LoginPage from '../pages/loginPage.js';
+import SecurePage from '../pages/securePage.js';
 
 class PageFactory {
   constructor(driver) {
@@ -15,4 +15,4 @@ class PageFactory {
   }
 }
 
-module.exports = PageFactory;
+export default PageFactory;
