@@ -8,10 +8,8 @@ beforeAll(async () => {
   driver = await new Builder()
     .forBrowser('chrome')
     .setChromeOptions(new chrome.Options()
-      .headless() // Para ejecución en CI
-      .addArguments('--no-sandbox', '--disable-dev-shm-usage')
-    )
-    .build();
+    .addArguments('--headless', '--no-sandbox', '--disable-dev-shm-usage') // ✅ Corrección
+)   .build();
 
   // Hacer driver disponible globalmente
   global.driver = driver;
