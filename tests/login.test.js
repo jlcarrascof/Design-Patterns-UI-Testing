@@ -10,7 +10,6 @@ describe('The Internet Login Tests - POM + Factory', () => {
   let driver;
   let loginPage;
 
-
   beforeAll(async () => {
     const serviceBuilder = new chrome.ServiceBuilder(chromedriver.path);
     const chromeOptions = new chrome.Options();
@@ -45,8 +44,13 @@ describe('The Internet Login Tests - POM + Factory', () => {
     await loginPage.enterPassword('SuperSecretPassword!');
     await loginPage.clickLogin();
 
-    const successMsg = await loginPage.getErrorMessage();
+    const securePage = PageFactory.createPage('secure', driver);
+    const successMsg = await securePage.getFlashMessage();
+
     expect(successMsg).toContain('You logged into a secure area!');
+
+    // Opcional: realizar logout al final para no afectar otros tests
+    await securePage.logout();
   });
 
 });
