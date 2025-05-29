@@ -1,6 +1,6 @@
 const { Builder } = require('selenium-webdriver');
 const chrome = require('selenium-webdriver/chrome');
-const TIMEOUT = 30000;
+const TIMEOUT = 60000;
 
 // Configuración global del driver
 let driver;
