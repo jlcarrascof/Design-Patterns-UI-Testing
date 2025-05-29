@@ -1,4 +1,4 @@
-const PageFactory = require('../factories/pageFactory');
+const PageFactory = require('../factories/PageFactory');
 
 describe('Login Tests', () => {
   let pageFactory;
