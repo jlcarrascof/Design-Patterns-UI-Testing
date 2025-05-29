@@ -1,4 +1,5 @@
 const { By } = require('selenium-webdriver');
+const LoginPage = require('./loginPage');
 
 class SecurePage {
   constructor(driver) {

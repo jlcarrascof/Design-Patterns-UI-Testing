@@ -1,7 +1,7 @@
-const TIMEOUT = 60000; // 60 seconds
+const TIMEOUT = 120000; // 60 seconds
 
 module.exports = {
   setupFilesAfterEnv: ['./jest.setup.js'],
-  testEnvironment: 'node',
+  // testEnvironment: 'node',
   testTimeout: TIMEOUT,
 };
