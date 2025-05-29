@@ -16,7 +16,7 @@ beforeAll(async () => {
 }, 30000);
 
 afterAll(async () => {
-  if (driver) {
-    await driver.quit();
+  if (global.driver) {
+    await global.driver.quit();
   }
 }, 30000);

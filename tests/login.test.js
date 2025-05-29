@@ -4,7 +4,7 @@ describe('Login Tests', () => {
   let pageFactory;
 
   beforeAll(() => {
-    pageFactory = new PageFactory(driver); // driver está disponible globalmente
+    pageFactory = new PageFactory(global.driver); // driver está disponible globalmente
   });
 
   test('should login successfully with valid credentials', async () => {
