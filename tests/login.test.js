@@ -1,10 +1,10 @@
-const PageFactory = require('./factories/pageFactory.js');
+const PageFactory = require('./factories/pageFactory');
 
 describe('Login Tests', () => {
   let pageFactory;
 
   beforeAll(() => {
-    pageFactory = new PageFactory(global.driver); // driver está disponible globalmente
+    pageFactory = new PageFactory(global.driver);
   });
 
   test('should login successfully with valid credentials', async () => {
