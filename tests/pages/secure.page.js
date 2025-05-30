@@ -1,10 +1,9 @@
-// const { By, until } = require('selenium-webdriver');
-
+const { By } = require('selenium-webdriver');
 class SecurePage {
   constructor(driver) {
     this.driver = driver;
-    this.flashMessage = { css: '#flash' };
-    this.logoutButton = { css: 'a[href="/logout"]' };
+    this.flashMessage = By.id('flash');
+    this.logoutButton = By.css('a[href="/logout"]');
   }
 
   async getFlashMessage() {

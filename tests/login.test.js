@@ -3,7 +3,7 @@ const chrome = require('selenium-webdriver/chrome');
 const chromedriver = require('chromedriver');
 const PageFactory = require('./page.factory');
 
-// Tiempo máximo en milisegundos para ejecutar operaciones largas
+// Maximum timeout for the tests
 const MAX_TIMEOUT = 30000;
 
 describe('The Internet Login Tests - POM + Factory', () => {
@@ -49,7 +49,7 @@ describe('The Internet Login Tests - POM + Factory', () => {
 
     expect(successMsg).toContain('You logged into a secure area!');
 
-    // Opcional: realizar logout al final para no afectar otros tests
+    // Optional: close the session to clean up after the test
     await securePage.logout();
   });
 
