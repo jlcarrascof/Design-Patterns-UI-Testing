@@ -6,7 +6,7 @@ const PageFactory = require('./page.factory');
 // Maximum timeout for the tests
 const MAX_TIMEOUT = 30000;
 
-describe('The Internet Login Tests - POM + Factory', () => {
+describe('Testing of https://the-internet.herokuapp.com/login', () => {
   let driver;
   let loginPage;
 
@@ -20,8 +20,9 @@ describe('The Internet Login Tests - POM + Factory', () => {
       .setChromeService(serviceBuilder) // <-- Este sí es un ServiceBuilder real
       .build();
 
-    loginPage = PageFactory.createPage('login', driver);
-    await loginPage.open();
+      loginPage = PageFactory.createPage('login', driver);
+
+      await loginPage.open();
   }, MAX_TIMEOUT);
 
   afterAll(async () => {
@@ -36,6 +37,7 @@ describe('The Internet Login Tests - POM + Factory', () => {
     await loginPage.clickLogin();
 
     const errorMsg = await loginPage.getErrorMessage();
+
     expect(errorMsg).toContain('Your username is invalid!');
   });
 
