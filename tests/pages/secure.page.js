@@ -1,3 +1,4 @@
+const { By } = require('selenium-webdriver');
 class SecurePage {
   constructor(driver) {
     this.driver = driver;
