@@ -4,7 +4,8 @@
   "description": "POM y Factory Pattern using Selenium with JavaScript and Jest",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "test:e2e": "jest --config=jest.config.js --runInBand"
   },
   "keywords": [],
   "author": "",
